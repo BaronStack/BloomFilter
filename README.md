@@ -10,14 +10,24 @@ Implementation is simple.
 ### Traditional BloomFilter
 Maintain a bit stream and several hash functions.
 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210317232823557.png)
+
 Input some string and produce a hash value by several hash functions. Then let the hash value's bit 
 position to be 1.
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021031723295291.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210317233107104.png)
 
 ### Counter BloomFilter
 When we want to change the bloom filter's map strings, something like delete some string's bit position.
 
 So we need to maintain a counter to replace the bit position, for we could decrease the counter when we want to delete a
 string from bloom filter.And also ,we could increase the counter when we add a string to bloom filter.
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210317234802631.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210317234943117.png)
 
 > The counter bloomfilter's disadvantage is that there is much more memory wasted by storage the counter.
 
